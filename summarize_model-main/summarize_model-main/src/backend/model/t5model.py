@@ -37,7 +37,7 @@ class T5Model:
         ]
 
         if not check:
-            file_id = "1-5nzlVrVtgYpBJgIdeErtDzvgd9JkqZr"
+            file_id = "1c7VCNo9ie5jmHwmw_ILeP0zhzP8KrrYy"
             output = f"{self.root_dir}/{self.weights_file}"
             gdown.download(id=file_id, output=output, quiet=False)
 

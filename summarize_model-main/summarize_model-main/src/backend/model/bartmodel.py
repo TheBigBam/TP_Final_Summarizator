@@ -36,7 +36,7 @@ class BARTModel:
         ]
 
         if not check:
-            file_id = "1-5nzlVrVtgYpBJgIdeErtDzvgd9JkqZr"
+            file_id = "1USUPWkGdHr5q8IYmI-uyPNFAkI3f_RJY"
             output = f"{self.root_dir}/{self.weights_file}"
             gdown.download(id=file_id, output=output, quiet=False)
 

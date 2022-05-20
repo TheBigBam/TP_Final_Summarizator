@@ -4,8 +4,8 @@ from flask import Flask, jsonify, make_response
 
 from backend.model.web import model_blueprint, model_blueprint2
 
-__version__ = "0.0.1"
-__author__ = 'Richard Cancino'
+__version__ = "1.0.0"
+__author__ = 'Jose Ignacio Talavera'
 
 def BackendApplication():
     app = Flask("backend")
