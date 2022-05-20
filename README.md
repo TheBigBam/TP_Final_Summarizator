@@ -1,23 +1,23 @@
 Abrir cada subcarpeta en Visual Code y abrir un nuevo terminal. 
 
 Backend
-pipenv shell
+* pipenv shell
 
-pip install -r .\summarize_model-main\requirements.txt
+* pip install -r .\summarize_model-main\requirements.txt
 
-cd .\summarize_model-main\
+* cd .\summarize_model-main\
 
-SET FLASK_APP=src/backend
+* SET FLASK_APP=src/backend
 
-$env:FLASK_APP = "src/backend"
+* $env:FLASK_APP = "src/backend"
 
-python -m flask run
+* python -m flask run
 
 Frontend
-pipenv shell
+* pipenv shell
 
-pip install -r .\text-analysis-web\requirements.txt
+* pip install -r .\text-analysis-web\requirements.txt
 
-cd \text-analysis-web\
+* cd \text-analysis-web\
 
-python -m flask run -h localhost -p 3001
+* python -m flask run -h localhost -p 3001
