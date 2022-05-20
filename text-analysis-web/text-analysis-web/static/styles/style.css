@@ -1,0 +1,66 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+.content {
+  background-image: url("/static/img/background.webp");
+  display: flex;
+  margin: 10px;
+  padding: 25px 20px;
+  width: fit-content;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 7%;
+}
+
+.select,
+.button {
+  background-color: linear-gradient(var(--c), #6dcbff);
+  border: none;
+  padding: 5px 10px;
+}
+
+.textarea {
+  height: 200px;
+  width: 450px;
+  margin-bottom: 10px;
+}
+
+.select {
+  margin-bottom: 40px;
+}
+
+.button {
+  margin-bottom: 10px;
+}
+
+.bg-light-moon {
+  background: #ffefba; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ffefba
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ffefba
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #000;
+  border: 3px solid #eee;
+}
+
+.hidden {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
