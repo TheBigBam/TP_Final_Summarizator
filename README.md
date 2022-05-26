@@ -1,6 +1,6 @@
 Abrir cada subcarpeta en Visual Code y abrir un nuevo terminal. 
 
-Backend
+Backend - Summarize
 * pipenv shell
 
 * pip install -r .\summarize_model-main\requirements.txt
@@ -13,7 +13,7 @@ Backend
 
 * python -m flask run
 
-Frontend
+Frontend - text-analysis
 * pipenv shell
 
 * pip install -r .\text-analysis-web\requirements.txt
