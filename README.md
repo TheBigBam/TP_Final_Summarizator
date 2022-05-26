@@ -18,6 +18,6 @@ Frontend - text-analysis
 
 * pip install -r .\text-analysis-web\requirements.txt
 
-* cd \text-analysis-web\
+* cd text-analysis-web\
 
 * python -m flask run -h localhost -p 3001
