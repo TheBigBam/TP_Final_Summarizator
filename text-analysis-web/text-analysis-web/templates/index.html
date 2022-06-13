@@ -16,30 +16,123 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/style.css') }}"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <form method="post" enctype="multipart/form-data">
       <div class="content">
-        <div>
-          <p>Input:</p>
-          <textarea id="input_text" class="textarea"></textarea>
-          <p>Resumen:</p>
-          <textarea id="result_text" class="textarea" readonly></textarea>
+        <div class="row">
+          <div class="options-container">
+            <h1>Summarizator</h1><br>
+            <input id="instBool" type="int" name="instBool" value="1" class="hidden" />
+            <p>Input:</p>
+            <textarea id="input_text" class="textarea"></textarea>
+            <p>Resumen:</p>
+            <textarea id="result_text" class="textarea" readonly></textarea>
+            <div>
+              <p>Metricas:</p>
+              <div id="example1">
+                <table class="table table-sm" id="sortTable">
+                  <thead>
+                    <tr class="table-dark">
+                      <th scope="col">Model</th>
+                      <th onclick="sortTable(0)" scope="col">R1</th>
+                      <th onclick="sortTable(1)" scope="col">R2</th>
+                      <th onclick="sortTable(2)" scope="col">RL</th>
+                      <th onclick="sortTable(3)" scope="col">Survey</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myTable">
+                    <tr>
+                      <th scope="row">BARTS - BillSum</th>
+                      <td>58.80</td>
+                      <td>41.30</td>
+                      <td>51.30</td>
+                      <td>66.07</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">BARTS - GovReport</th>
+                      <td>39.89</td>
+                      <td>18.45</td>
+                      <td>29.29</td>
+                      <td>58.29</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DISTILBARTL - BillSum</th>
+                      <td>59.24</td>
+                      <td>42.04</td>
+                      <td>51.86</td>
+                      <td>64.29</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">T5S - BillSum</th>
+                      <td>57.93</td>
+                      <td>40.44</td>
+                      <td>50.70</td>
+                      <td>64.29</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DISTILBARTL - GovReport</th>
+                      <td>39.76</td>
+                      <td>18.40</td>
+                      <td>29.04</td>
+                      <td>53.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">LED - GovReport</th>
+                      <td>23.05</td>
+                      <td>10.01</td>
+                      <td>17.59</td>
+                      <td>45.86</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="options-container" id="instructions">
+            <br><br><br><br>
+            <p>Instrucciones:</p>
+            <ol>
+              <li>Elegir documento a resumir pegando el texto <br> en <b>Input</b> o seleccionando el botón <b>Importar</b>.</li>
+              <li>Si importa un archivo, navegar en la <br>computadora y seleccionar su archivo .txt</li>
+              <li>Para que se reduzca el documento, presione <br> el botón <b>Resumir</b> </li>
+              <li>El texto resumido se mostrara en el recuadro <br> <b>Resumen</b> </li>
+            </ol>
+            
+          <div>
+            
+            <div class="options-container">
+              <div class="dropdown">
+                <label>Modelo: </label>
+                <select name="one" class="dropdown-select" id="modelo">
+                  <option value="">Select Model</option>
+                  <option value="BARTS - BillSum">BARTS - BillSum</option>
+                  <option value="BARTS - GovReport">BARTS - GovReport</option>
+                  <!-- <option value="DISTILBARTL - BillSum">DISTILBARTL - BillSum</option>
+                  <option value="T5S - BillSum">T5S - BillSum</option>
+                  <option value="DISTILBARTL - GovReport">DISTILBARTL - GovReport</option>
+                  <option value="LED - GovReport">LED - GovReport</option> -->
+                </select>
+              </div>
+              <br>
+              <input id="file-input" type="file" name="file" class="hidden" />
+              <button id="file-button" type="button" class="button bg-light-moon">
+                Importar
+              </button>
+              <button id="resume-button" type="button" class="button bg-light-moon">
+                Resumir
+              </button>
+              <!-- <button id="instrucciones-button" type="button" class="button bg-light-moon">
+                Instrucciones
+              </button> -->
+            </div>  
         </div>
-        <div class="options-container">
-          <select class="select bg-light-moon" id="modelo">
-            <option>T5_Billsum_short</option>
-            <option>DistilBart_GovReport_long</option>
-          </select>
-          <input id="file-input" type="file" name="file" class="hidden" />
-          <button id="file-button" type="button" class="button bg-light-moon">
-            Importar
-          </button>
-          <button id="resume-button" type="button" class="button bg-light-moon">
-            Resumir
-          </button>
+        <div class="row">
+          
         </div>
       </div>
+      
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>

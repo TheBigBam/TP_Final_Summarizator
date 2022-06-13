@@ -4,15 +4,15 @@ import gdown
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-
+#Best BillSum - BART
 class T5Model:
     def __init__(self):
-        self.pretrained_model_name = "t5-small"
+        self.pretrained_model_name = "facebook/bart-base"
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.pretrained_model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(self.pretrained_model_name)
-        self.model.config.max_encoder_position_embeddings = 1024
-        self.model.config.max_decoder_position_embeddings = 16384
+        self.model.config.max_encoder_position_embeddings = 256
+        self.model.config.max_decoder_position_embeddings = 64
         self.model.config.max_length = 500
 
         self.root_dir = "artifact"
@@ -37,7 +37,7 @@ class T5Model:
         ]
 
         if not check:
-            file_id = "1c7VCNo9ie5jmHwmw_ILeP0zhzP8KrrYy"
+            file_id = "1ka6S-eaU0Tk_60QrmpiPvNj-c5pPK336"
             output = f"{self.root_dir}/{self.weights_file}"
             gdown.download(id=file_id, output=output, quiet=False)
 

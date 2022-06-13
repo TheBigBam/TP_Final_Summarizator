@@ -19,7 +19,9 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
-  margin-top: 7%;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .select,
@@ -59,8 +61,20 @@ body {
   border: 3px solid #eee;
 }
 
+.h1 {
+  margin: 0px;
+  padding: 10px;
+}
+
 .hidden {
   height: 0;
   width: 0;
   visibility: hidden;
+}
+
+#example1{
+    
+  height:400px;
+  width:500px;
+  margin:10px;
 }

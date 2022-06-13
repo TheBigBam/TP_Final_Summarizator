@@ -4,9 +4,10 @@ import gdown
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
+#Best GovReport - BART
 class BARTModel:
     def __init__(self):
-        self.pretrained_model_name = "sshleifer/distilbart-xsum-6-6"
+        self.pretrained_model_name = "facebook/bart-base"
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.pretrained_model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(self.pretrained_model_name)
@@ -34,12 +35,10 @@ class BARTModel:
             for file in files
             if file == self.weights_file
         ]
-
         if not check:
-            file_id = "1USUPWkGdHr5q8IYmI-uyPNFAkI3f_RJY"
+            file_id = "1Ph8Y5AdiQFygU5IotjIa4cD-I3MPBnBe"
             output = f"{self.root_dir}/{self.weights_file}"
             gdown.download(id=file_id, output=output, quiet=False)
-
     def generate_summary(self, test_case: dict) -> str:
         inputs = self.tokenizer(
             test_case["text"],
